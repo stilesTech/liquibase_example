@@ -1,0 +1,23 @@
+server:
+  port: 9987
+logging:
+  level:
+    com.baomidou: debug
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:31306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  liquibase:
+    enabled: true
+    #存储变化的文件（changelog）位置
+    change-log: classpath:liquibase/master.xml
+    contexts: development,test,production
+    drop-first: false
+    rollback-file:
+#    url: jdbc:mysql://127.0.0.1:31306/test?useUnicode=true&characterEncoding=utf-8
+#    user: root
+#    password: 123456
+#    check-change-log-location: true
+
